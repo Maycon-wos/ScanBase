@@ -1,5 +1,5 @@
 -- Arquitetura ScanBase-DB
--- Versão 1.0
+-- Versão 1.1
 
 CREATE TABLE sites_config (
     id SERIAL PRIMARY KEY,
@@ -12,6 +12,7 @@ CREATE TABLE sites_config (
 CREATE TABLE produtos (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
+    ean VARCHAR(13), -- O campo faltante está aqui!
     url TEXT NOT NULL,
     site_id INTEGER NOT NULL REFERENCES sites_config(id)
 );
